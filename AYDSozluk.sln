@@ -31,7 +31,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AYDSozluk.Api.Infrastructure.Persistence", "src\Api\Infrastructure\AYDSozluk.Api.Infrastructure.Persistence\AYDSozluk.Api.Infrastructure.Persistence.csproj", "{457D2DE0-DBCF-40A0-ABEA-94DAE9963133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AYDSozluk.Api.WebApi", "src\Api\AYDSozluk.Api.WebApi\AYDSozluk.Api.WebApi.csproj", "{A411D7F2-E512-4724-8465-05ED7C98D3B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AYDSozluk.Api.WebApi", "src\Api\AYDSozluk.Api.WebApi\AYDSozluk.Api.WebApi.csproj", "{A411D7F2-E512-4724-8465-05ED7C98D3B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSozluk.Api.Application", "src\Api\Core\BlazorSozluk.Api.Application\BlazorSozluk.Api.Application.csproj", "{CE822CD3-6246-4400-B5A9-4500DDCEF7DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{A411D7F2-E512-4724-8465-05ED7C98D3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A411D7F2-E512-4724-8465-05ED7C98D3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A411D7F2-E512-4724-8465-05ED7C98D3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE822CD3-6246-4400-B5A9-4500DDCEF7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE822CD3-6246-4400-B5A9-4500DDCEF7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE822CD3-6246-4400-B5A9-4500DDCEF7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE822CD3-6246-4400-B5A9-4500DDCEF7DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{FCDF8EE9-1A40-4C64-BAF9-8A7297A7AF9E} = {1A19CF7A-B5AC-4041-A7D9-014A09FA3044}
 		{457D2DE0-DBCF-40A0-ABEA-94DAE9963133} = {FCDF8EE9-1A40-4C64-BAF9-8A7297A7AF9E}
 		{A411D7F2-E512-4724-8465-05ED7C98D3B3} = {1A19CF7A-B5AC-4041-A7D9-014A09FA3044}
+		{CE822CD3-6246-4400-B5A9-4500DDCEF7DD} = {0F6B3F48-2CB9-45BF-9D30-BBEF4A71F1E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E15DA10E-8A74-488E-B311-C36D11E3D56D}
