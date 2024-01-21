@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AYDSozluk.Api.Domain\AYDSozluk.Api.Domain.csproj" />
+    <ProjectReference Include="..\..\Core\BlazorSozluk.Api.Application\BlazorSozluk.Api.Application.csproj" />
   </ItemGroup>
 
 </Project>

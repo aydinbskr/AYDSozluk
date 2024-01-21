@@ -40,7 +40,7 @@ namespace AYDSozluk.Api.Infrastructure.Persistence.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var connStr = "Server=localhost\\SQLEXPRESS;Database=AYDSozluk;Trusted_Connection=True;TrustServerCertificate=True;";
+                var connStr = "Server=.;Database=AYDSozluk;Trusted_Connection=True;TrustServerCertificate=True;";
                 optionsBuilder.UseSqlServer(connStr, opt =>
                 {
                     opt.EnableRetryOnFailure();
