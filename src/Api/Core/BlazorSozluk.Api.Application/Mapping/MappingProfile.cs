@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AYDSozluk.Api.Domain.Models;
+using AYDSozluk.Common.Models.RequestModels;
 using AYDSozluk.Common.Models.ResponseModels;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,9 @@ namespace BlazorSozluk.Api.Application.Mapping
             CreateMap<User, LoginUserResponse>()
                 .ReverseMap();
 
-            //CreateMap<CreateUserCommand, User>();
+            CreateMap<CreateUserRequest, User>();
 
-            //CreateMap<UpdateUserCommand, User>();
+            CreateMap<UpdateUserRequest, User>();
 
             //CreateMap<UserDetailViewModel, User>()
             //    .ReverseMap();
