@@ -1,0 +1,69 @@
+﻿@page "/profile/{UserName}"
+@page "/profile/{UserId:guid}"
+@page "/me"
+@using AYDSozluk.Clients.WebApp.Infrastructure.Extensions
+@using AYDSozluk.Common.Models.Page
+
+
+<UserProfileDetailComponent UserName="@UserName" UserId="@UserId" />
+<br />
+
+@if (entries is not null)
+{
+    foreach (var entry in entries.Results)
+    {
+        <EntryViewerComponent Entry="@entry" MyEntries="true" />
+        <br />
+    }
+
+    <br />
+
+    <PaginationComponent TotalPage="@entries.PageInfo.TotalPageCount"
+                     CurrentPage="@currentPage"
+                     OnPageChanged="@OnPageChanged" />
+}
+
+
+@code {
+
+    [Inject]
+    IEntryService entryService { get; set; }
+
+    [Inject]
+    IUserService userService { get; set; }
+
+    [Inject]
+    AuthenticationStateProvider authenticationStateProvider { get; set; }
+
+    PagedResponse<GetEntryDetailResponse> entries;
+
+    [Parameter]
+    public string UserName { get; set; }
+
+    [Parameter]
+    public Guid UserId { get; set; }
+
+
+    private int currentPage = 1;
+    private UserDetailResponse userDetail = new();
+
+    public async Task OnPageChanged(int pageNumber)
+    {
+        entries = await entryService.GetProfilePageEntries(pageNumber, 20, UserName);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (UserId == Guid.Empty && string.IsNullOrEmpty(UserName))
+        {
+            UserId = await authenticationStateProvider.GetUserId();
+        }
+
+        userDetail = await userService.GetUserDetail(UserId);
+
+        UserName = userDetail.UserName;
+        UserId = userDetail.Id;
+        entries = await entryService.GetProfilePageEntries(currentPage, 20, UserName);
+    }
+
+}

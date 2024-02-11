@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using AYDSozluk.Common;
+using AYDSozluk.Common.Events.User;
+using AYDSozluk.Common.Infrastructure;
 using AYDSozluk.Common.Infrastructure.Exceptions;
 using AYDSozluk.Common.Models.RequestModels;
 using BlazorSozluk.Api.Application.Interfaces.Repositories;
@@ -38,16 +41,16 @@ namespace BlazorSozluk.Api.Application.Features.User.Commands
 
             if (emailChanged && rows > 0)
             {
-                //var @event = new UserEmailChangedEvent()
-                //{
-                //    OldEmailAddress = null,
-                //    NewEmailAddress = dbUser.EmailAddress
-                //};
+                var @event = new UserEmailChangedEvent()
+                {
+                    OldEmailAddress = null,
+                    NewEmailAddress = dbUser.EmailAddress
+                };
 
-                //QueueFactory.SendMessageToExchange(exchangeName: SozlukConstants.UserExchangeName,
-                //                                   exchangeType: SozlukConstants.DefaultExchangeType,
-                //                                   queueName: SozlukConstants.UserEmailChangedQueueName,
-                //                                   obj: @event);
+                QueueFactory.SendMessageToExchange(exchangeName: SozlukConstants.UserExchangeName,
+                                                   exchangeType: SozlukConstants.DefaultExchangeType,
+                                                   queueName: SozlukConstants.UserEmailChangedQueueName,
+                                                   obj: @event);
 
                 dbUser.EmailConfirmed = false;
                 await userRepository.UpdateAsync(dbUser);

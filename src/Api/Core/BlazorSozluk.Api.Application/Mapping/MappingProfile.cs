@@ -21,18 +21,18 @@ namespace BlazorSozluk.Api.Application.Mapping
 
             CreateMap<UpdateUserRequest, User>();
 
-            //CreateMap<UserDetailViewModel, User>()
-            //    .ReverseMap();
+            CreateMap<UserDetailResponse, User>()
+                .ReverseMap();
 
-            //CreateMap<CreateEntryCommand, Entry>()
-            //    .ReverseMap();
+            CreateMap<CreateEntryRequest, Entry>()
+                .ReverseMap();
 
-            //CreateMap<Entry, GetEntriesViewModel>()
-            //    .ForMember(x => x.CommentCount, y => y.MapFrom(z => z.EntryComments.Count));
+            CreateMap<Entry, GetEntriesResponse>()
+                .ForMember(x => x.CommentCount, y => y.MapFrom(z => z.EntryComments.Count));
 
 
-            //CreateMap<CreateEntryCommentCommand, EntryComment>()
-            //    .ReverseMap();
+            CreateMap<CreateEntryCommentRequest, EntryComment>()
+                .ReverseMap();
 
 
         }
